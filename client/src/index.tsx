@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-// uncomment this to see the bug
-// const enum Type {
-//     Type1 = 'Type1',
-//     Type2 = 'Type2'
-// }
+// comment this to see the bug
+const enum Type {
+    Type1 = 'Type1',
+    Type2 = 'Type2'
+}
 
 interface Props {
     param1: Type;
