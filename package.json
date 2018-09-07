@@ -1,0 +1,19 @@
+{
+  "name": "bihive-rest",
+  "private": true,
+  "scripts": {
+    "start": "concurrently -n \"TSC, Node,React\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch\" \"cd client && npm run start\"",
+    "build": "tsc || exit 1",
+    "debug": "concurrently -n \"Node,React\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-debug\" \"cd client && npm run start\"",
+    "watch": "nodemon --delay 2 --watch dist dist/app.js",
+    "watch-debug": "nodemon --inspect --watch dist dist/app.js",
+    "watch-ts": "tsc --watch",
+    "install-dependencies": "npm install && cd client && npm install"
+  },
+  "devDependencies": {
+    "@types/node": "9.4.0",
+    "concurrently": "3.5.1",
+    "nodemon": "1.14.12",
+    "typescript": "2.8.4"
+  }
+}
